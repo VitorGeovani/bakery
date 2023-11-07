@@ -1,0 +1,61 @@
+/* Estilos para o menu lateral */
+*{
+    margin: 0 auto;
+}
+
+#menu-button {
+    display: none;
+    margin-right: 10px;
+}
+
+#mobile-menu {
+    display: none;
+}
+.logo{
+    margin-left: -250px;
+}
+
+@media screen and (max-width: 915px) {
+    /* Para telas de até 768px de largura (dispositivos móveis) */
+    #menu-button {
+        display: block;
+    }
+
+    #mobile-menu {
+        display: flex; /* Alteração: Use 'flex' para melhor alinhamento vertical */
+        flex-direction: column; /* Alteração: Coluna para os links ocuparem uma linha */
+        align-items: flex-end; /* Alteração: Alinhamento à direita */
+        justify-content: center; /* Alteração: Centralizar verticalmente */
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        transform: translateX(100%); /* Começa escondido */
+        transition: transform 0.3s ease-in-out;
+        background-color: black; /* Cor do menu móvel */
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .logo{
+        margin-left: -50px;
+    }
+
+    #sobre{
+        text-align: center;
+        
+    }
+
+    #texto{
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+#menu-button:hover + #mobile-menu,
+#mobile-menu:hover {
+    transform: translateX(0);
+}
